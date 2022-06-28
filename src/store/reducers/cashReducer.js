@@ -1,0 +1,18 @@
+import { ADD_CASH, GET_CASH } from '../actions'
+
+const defaultState = {
+    cash: 0,
+}
+
+export const cashReducer = (state = defaultState, action) => {
+    switch (action.type) {
+        // экшен
+        case ADD_CASH:
+            return { ...state, cash: state.cash + action.payload }
+        // экшен
+        case GET_CASH:
+            return { ...state, cash: state.cash - action.payload }
+        default:
+            return state
+    }
+}
